@@ -91,7 +91,7 @@
                   <td>
                     <div class="price-wrap">
                       <var class="price">Rp{{ cart_item.sub_total }}</var>
-                      <small class="text-muted"> {{ cart_item.product.price }} each </small>
+                      <small class="text-muted"> {{ cart_item.product.price }} per pcs </small>
                     </div>
                     <!-- price-wrap .// -->
                   </td>
@@ -99,8 +99,8 @@
                 {% endfor %}
               </tbody>
             </table>
-            <button type="submit" name="submit" class="btn btn-primary btn-block">Place Order</button>
-            <a href="{% url 'store' %}" class="btn btn-light btn-block">Continue Shopping</a>
+            <a  href="{% url 'home' %}" class="btn btn-primary btn-block">Bayar</a>
+            <a href="{% url 'store' %}" class="btn btn-light btn-block">Lanjut Belanja</a>
             </form>
           </div>
           <!-- card-body.// -->

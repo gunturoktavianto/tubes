@@ -77,7 +77,7 @@ def login(request):
             except:
                 pass
             auth.login(request, user)
-            messages.success(request, 'Berhasil login.')
+            
             url = request.META.get('HTTP_REFERER')
             try:
                 query = requests.utils.urlparse(url).query
@@ -89,7 +89,7 @@ def login(request):
                 return redirect('home')
 
         else:
-            messages.error(request, 'Invalid login credentials')
+            messages.error(request, 'Akun tidak ditemukan.')
             return redirect('login')
     return render(request, 'accounts/login.html')
     
@@ -142,7 +142,7 @@ def forgotPassword(request):
 
 
         else:
-            messages.error(request, 'Akun tidak ada!')
+            messages.error(request, 'Akun tidak ditemukan!')
             return redirect('forgotPassword')
     
     return render(request, 'accounts/forgotPassword.html')
